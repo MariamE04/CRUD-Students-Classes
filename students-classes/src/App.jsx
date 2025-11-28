@@ -4,6 +4,9 @@ import PersonForm from './components/PersonForm';
 import StudentList from "./components/StudentList.jsx";
 import { fetchData } from './utils/fetchData';
 
+const blankStudent = {
+   "id": "", "name": "", "age": "","email": "","classes": ""}
+
 
 function App() {
   const [students, setStudents] = useState([]);
@@ -23,6 +26,14 @@ function App() {
 }
 
 
+  function deleteStudentById(studentId){
+    // Fjerne via API -JSONServer
+     fetchData(`${APIURL}/${studentId}`, () =>{}, "DELETE");
+
+    // Fjerne fra students array via setStudents()
+    setStudents([...students.filter((s) => s.id != studentId)]);
+  }
+
   useEffect(()=> {
    // get all Students
     getStudents((data) => setStudents(data))
@@ -32,9 +43,11 @@ function App() {
   return (
     <div>
         <h1>Students DB</h1>
-      <PersonForm/>
+      <PersonForm blankStudent={blankStudent}/>
 
-       <StudentList students={students} classes={classes}/>
+       <StudentList students={students} 
+       classes={classes}
+       deleteStudentById={deleteStudentById}/>
     </div>
   )
 }

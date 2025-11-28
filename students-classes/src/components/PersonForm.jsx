@@ -1,18 +1,20 @@
+import { useState } from "react";
 
-function PersonForm(){
+function PersonForm({blankStudent}){
+  const [student, setStudent] = useState({});
   
   return(
     <div>
       <p>Add/Edit student</p>
      <form>
         <label htmlFor="id">Id</label>
-        <input id="id" type="number" readOnly placeholder="id" />
+        <input id="id" type="number" readOnly placeholder="id" value={student.id} />
         <label htmlFor="name">Name</label>
-        <input id="name" type="text" placeholder="Enter name" />
+        <input id="name" type="text" placeholder="Enter name" value={student.name} />
         <label htmlFor="age">Age</label>
-        <input id="age" type="number" min="1" max="120" placeholder="Enter age" />
+        <input id="age" type="number" min="1" max="120" placeholder="Enter age" value={student.age} />
         <label htmlFor="email">Email</label>
-        <input id="email" type="email" placeholder="Enter email" />
+        <input id="email" type="email" placeholder="Enter email" value={student.email} />
         <label htmlFor="class">Class</label>
 
   <select id="class">
@@ -21,7 +23,7 @@ function PersonForm(){
   </select>
 
   <button>Update</button>
-   <button type="button">Reset</button>
+   <button onClick={() => setStudent(blankStudent)}>Reset</button>
 
 </form>
 </div>

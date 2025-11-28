@@ -1,0 +1,17 @@
+GET http://localhost:3000/students
+
+### 
+
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+  "name": "Mariam",
+  "age": 21,
+  "email": "mari@example.com",
+  "classes": [1]
+}
+
+###
+
+DELETE http://localhost:3000/students/905d

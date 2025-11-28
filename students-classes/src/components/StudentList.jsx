@@ -1,4 +1,4 @@
-function StudentList({ students, classes}){
+function StudentList({ students, classes, deleteStudentById}){
 
   function getClassNameById(id) {
   const found = classes.find(c => c.id == id);
@@ -34,7 +34,7 @@ function StudentList({ students, classes}){
       <td>{student.classes.map(cid => getClassNameById(cid)).join(", ")}</td>
       <td>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => deleteStudentById(student.id)}>Delete</button>
       </td>
     </tr>
       )
