@@ -16,6 +16,7 @@ function PersonForm({blankStudent, studentToEdit, mutateStudent}){
 
   function handleSubmit(event){
     event.preventDefault();
+
     console.log("submit", student)
     mutateStudent(student);
     // callback function fra APP.jsx, som enten indsætter en ny student
@@ -27,9 +28,12 @@ function PersonForm({blankStudent, studentToEdit, mutateStudent}){
       <p>Add/Edit student</p>
       {JSON.stringify(student)}
      <form onSubmit={handleSubmit}>
+        {student.id && ( 
+        <> 
         <label htmlFor="id">Id</label>
-        <input id="id" type="number" readOnly placeholder="id" value={student.id} />
-        
+        <input id="id" type="text" readOnly value={student.id}/> 
+        </>
+      )}
         <label htmlFor="name">Name</label>
         <input id="name" type="text" placeholder="Enter name" value={student.name} onChange={handleChange} />
         <label htmlFor="age">Age</label>
