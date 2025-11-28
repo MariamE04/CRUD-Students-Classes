@@ -7,8 +7,9 @@ import { fetchData } from './utils/fetchData';
 
 function App() {
   const [students, setStudents] = useState([]);
+  const [classes, setClasses] = useState([]);
   const APIURL = "http://localhost:3000/students";
-  //const APIURLC = "http://localhost:3000/classes";
+  const APIURLC = "http://localhost:3000/classes";
 
   function getStudents(callback){
     // Fetch data
@@ -17,9 +18,15 @@ function App() {
     // update data useStates (setStudents)
   }
 
+  function getClasses(callback){
+  fetchData(APIURLC, callback);
+}
+
+
   useEffect(()=> {
    // get all Students
     getStudents((data) => setStudents(data))
+     getClasses((data) => setClasses(data));
   }, []);
 
   return (
@@ -27,7 +34,7 @@ function App() {
         <h1>Students DB</h1>
       <PersonForm/>
 
-       <StudentList students={students}/>
+       <StudentList students={students} classes={classes}/>
     </div>
   )
 }

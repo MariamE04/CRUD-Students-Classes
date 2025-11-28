@@ -1,4 +1,16 @@
-function StudentList({students}){
+function StudentList({ students, classes}){
+
+  function getClassNameById(id) {
+  const found = classes.find(c => c.id == id);
+
+  if (found) {
+    return found.name;
+  } else {
+    return "Unknown";
+  }
+}
+
+
     return(
         <div>
             <table className="table table-striped">
@@ -19,7 +31,7 @@ function StudentList({students}){
       <td>{student.name}</td>
       <td>{student.age}</td>
       <td>{student.email}</td>
-      <td>{student.className}</td>
+      <td>{student.classes.map(cid => getClassNameById(cid)).join(", ")}</td>
       <td>
         <button>Edit</button>
         <button>Delete</button>
