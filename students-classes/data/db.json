@@ -37,6 +37,15 @@
       "classes": [
         1
       ]
+    },
+    {
+      "id": "cf33",
+      "name": "Lumiere",
+      "age": "23",
+      "email": "elmirmariam16@gmail.com",
+      "classes": [
+        "1"
+      ]
     }
   ],
   "classes": [
