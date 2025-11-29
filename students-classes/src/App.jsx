@@ -90,7 +90,9 @@
           <h1>Students DB</h1>
         <PersonForm blankStudent={blankStudent}
         studentToEdit={studentToEdit}
-        mutateStudent={mutateStudent} />
+        mutateStudent={mutateStudent} 
+        onReset={() => setStudentToEdit(blankStudent)}
+        />
 
         <StudentList students={students} 
         classes={classes}

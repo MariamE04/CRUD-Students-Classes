@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function PersonForm({blankStudent, studentToEdit, mutateStudent}){
+function PersonForm({blankStudent, studentToEdit, mutateStudent, onReset}){
   const [student, setStudent] = useState({...studentToEdit});
   
   useEffect(() => {
@@ -54,7 +54,8 @@ function PersonForm({blankStudent, studentToEdit, mutateStudent}){
 
 
   <button>Update</button>
-   <button onClick={() => setStudent(blankStudent)}>Reset</button>
+ <button type="button" onClick={() => {setStudent(blankStudent);  onReset();}}> Reset</button>
+
 
 </form>
 </div>
