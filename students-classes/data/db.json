@@ -1,9 +1,9 @@
 {
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Alice",
-      "age": 20,
+      "age": "21",
       "email": "alice@example.com",
       "classes": [
         1,
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Bob",
       "age": 20,
       "email": "bob@example.com",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Charlize",
       "age": 20,
       "email": "char@example.com",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Eric",
       "age": 22,
       "email": "eric@example.com",
@@ -41,21 +41,30 @@
     {
       "id": "cf33",
       "name": "Lumiere",
-      "age": "23",
+      "age": "21",
       "email": "elmirmariam16@gmail.com",
       "classes": [
         "1"
+      ]
+    },
+    {
+      "id": "7662",
+      "name": "Xaiver",
+      "age": "25",
+      "email": "Xaiver@gmail.com",
+      "classes": [
+        "2"
       ]
     }
   ],
   "classes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Math 101",
       "teacher": "Mr. Smith"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "History 201",
       "teacher": "Mrs. Johnson"
     }
